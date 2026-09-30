@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English Master B1–C1</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #f5f7fb;
+    color: #202124;
+}
+
+header {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    padding: 28px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+header p {
+    opacity: .9;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat {
+    background: white;
+    padding: 18px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,.06);
+}
+
+.stat strong {
+    display: block;
+    font-size: 25px;
+    color: #5b21b6;
+}
+
+.search {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+.tabs button {
+    border: none;
+    background: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.tabs button.active {
+    background: #5b21b6;
+    color: white;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 15px;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    cursor: pointer;
+    transition: .2s;
+    box-shadow: 0 3px 12px rgba(0,0,0,.06);
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.card h3 {
+    margin-bottom: 8px;
+}
+
+.level {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.progress {
+    height: 8px;
+    background: #eee;
+    border-radius: 20px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.progress div {
+    height: 100%;
+    background: #7c3aed;
+    width: 0%;
+}
+
+.hidden {
+    display: none;
+}
+
+.lesson {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 3px 15px rgba(0,0,0,.07);
+}
+
+.back {
+    border: none;
+    background: #eee;
+    padding: 10px 15px;
+    border-radius: 9px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.word {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.word b {
+    font-size: 19px;
+    color: #4c1d95;
+}
+
+.quiz {
+    margin-top: 25px;
+}
+
+.question {
+    background: #f8f7ff;
+    padding: 18px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.option {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border: 1px solid #ddd;
+    background: white;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+.option:hover {
+    background: #f1efff;
+}
+
+.correct {
+    background: #dcfce7 !important;
+    border-color: #22c55e !important;
+}
+
+.wrong {
+    background: #fee2e2 !important;
+    border-color: #ef4444 !important;
+}
+
+.primary {
+    border: none;
+    background: #5b21b6;
+    color: white;
+    padding: 13px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.grammar-box {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.05);
+}
+
+.grammar-box h3 {
+    color: #5b21b6;
+    margin-bottom: 10px;
+}
+
+.example {
+    background: #f5f3ff;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+}
+
+@media(max-width:600px) {
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>📚 English Master B1–C1</h1>
+    <p>Ôn từ vựng • Ngữ pháp • Chuyên Anh</p>
+</header>
+
+<div class="container">
+
+<div class="stats">
+    <div class="stat">
+        <strong id="topicCount">30</strong>
+        Chủ đề
+    </div>
+
+    <div class="stat">
+        <strong id="wordCount">0</strong>
+        Từ đã học
+    </div>
+
+    <div class="stat">
+        <strong id="score">0</strong>
+        Điểm quiz
+    </div>
+</div>
+
+<div id="home">
+
+<input
+    class="search"
+    id="search"
+    placeholder="🔍 Tìm chủ đề..."
+>
+
+<div class="tabs">
+    <button class="active" onclick="showTopics()">📚 Vocabulary</button>
+    <button onclick="showGrammar()">🧠 Grammar</button>
+</div>
+
+<div id="topics" class="grid"></div>
+
+<div id="grammar" class="hidden"></div>
+
+</div>
+
+<div id="lesson" class="hidden"></div>
+
+</div>
+
+<footer>
+    English Master B1–C1 • Made for English learners
+</footer>
+
+<script>
+
+const topics = [
+
+{
+name:"Education",
+level:"B1-B2",
+words:[
+["curriculum","chương trình học"],
+["assignment","bài tập"],
+["achievement","thành tích"],
+["scholarship","học bổng"],
+["qualification","bằng cấp"],
+["academic","thuộc học thuật"],
+["examination","kỳ thi"],
+["knowledge","kiến thức"],
+["research","nghiên cứu"],
+["discipline","kỷ luật / ngành học"]
+]
+},
+
+{
+name:"Environment",
+level:"B1-B2",
+words:[
+["pollution","ô nhiễm"],
+["recycle","tái chế"],
+["ecosystem","hệ sinh thái"],
+["biodiversity","đa dạng sinh học"],
+["conservation","bảo tồn"],
+["sustainable","bền vững"],
+["renewable","có thể tái tạo"],
+["emission","khí thải"],
+["deforestation","phá rừng"],
+["habitat","môi trường sống"]
+]
+},
+
+{
+name:"Technology",
+level:"B1-B2",
+words:[
+["device","thiết bị"],
+["innovation","sự đổi mới"],
+["artificial intelligence","trí tuệ nhân tạo"],
+["digital","kỹ thuật số"],
+["software","phần mềm"],
+["privacy","quyền riêng tư"],
+["algorithm","thuật toán"],
+["automation","tự động hóa"],
+["cybersecurity","an ninh mạng"],
+["database","cơ sở dữ liệu"]
+]
+},
+
+{
+name:"Science",
+level:"B1-B2",
+words:[
+["experiment","thí nghiệm"],
+["hypothesis","giả thuyết"],
+["evidence","bằng chứng"],
+["theory","lý thuyết"],
+["laboratory","phòng thí nghiệm"],
+["discovery","khám phá"],
+["researcher","nhà nghiên cứu"],
+["chemical","hóa chất"],
+["species","loài"],
+["phenomenon","hiện tượng"]
+]
+},
+
+{
+name:"Health",
+level:"B1-B2",
+words:[
+["symptom","triệu chứng"],
+["treatment","điều trị"],
+["disease","bệnh"],
+["prevention","phòng ngừa"],
+["immune","miễn dịch"],
+["nutrition","dinh dưỡng"],
+["exercise","tập thể dục"],
+["mental health","sức khỏe tinh thần"],
+["infection","nhiễm trùng"],
+["recovery","sự hồi phục"]
+]
+},
+
+{
+name:"Food & Nutrition",
+level:"B1",
+words:[
+["ingredient","nguyên liệu"],
+["nutritious","bổ dưỡng"],
+["balanced diet","chế độ ăn cân bằng"],
+["calorie","calo"],
+["protein","chất đạm"],
+["vitamin","vitamin"],
+["processed food","thực phẩm chế biến"],
+["vegetarian","ăn chay"],
+["appetite","cảm giác thèm ăn"],
+["consumption","sự tiêu thụ"]
+]
+},
+
+{
+name:"Travel",
+level:"B1",
+words:[
+["destination","điểm đến"],
+["accommodation","chỗ ở"],
+["journey","hành trình"],
+["departure","khởi hành"],
+["arrival","đến nơi"],
+["luggage","hành lý"],
+["sightseeing","tham quan"],
+["adventure","cuộc phiêu lưu"],
+["tourist attraction","điểm du lịch"],
+["itinerary","lịch trình"]
+]
+},
+
+{
+name:"Culture",
+level:"B1-B2",
+words:[
+["tradition","truyền thống"],
+["custom","phong tục"],
+["heritage","di sản"],
+["identity","bản sắc"],
+["festival","lễ hội"],
+["diversity","sự đa dạng"],
+["cultural","thuộc văn hóa"],
+["religion","tôn giáo"],
+["ancestor","tổ tiên"],
+["generation","thế hệ"]
+]
+},
+
+{
+name:"Society",
+level:"B2",
+words:[
+["community","cộng đồng"],
+["inequality","bất bình đẳng"],
+["poverty","nghèo đói"],
+["welfare","phúc lợi"],
+["minority","thiểu số"],
+["justice","công lý"],
+["equality","bình đẳng"],
+["responsibility","trách nhiệm"],
+["citizenship","quyền công dân"],
+["integration","hội nhập"]
+]
+},
+
+{
+name:"Family & Relationships",
+level:"B1",
+words:[
+["relationship","mối quan hệ"],
+["relative","họ hàng"],
+["supportive","ủng hộ"],
+["conflict","xung đột"],
+["respect","tôn trọng"],
+["trust","tin tưởng"],
+["generation gap","khoảng cách thế hệ"],
+["responsibility","trách nhiệm"],
+["independent","độc lập"],
+["affection","tình cảm"]
+]
+},
+
+{
+name:"Friendship",
+level:"B1",
+words:[
+["loyal","trung thành"],
+["honest","trung thực"],
+["reliable","đáng tin"],
+["companion","bạn đồng hành"],
+["betray","phản bội"],
+["trustworthy","đáng tin cậy"],
+["support","ủng hộ"],
+["similarity","điểm tương đồng"],
+["argument","cuộc tranh luận"],
+["understanding","sự thấu hiểu"]
+]
+},
+
+{
+name:"Work & Careers",
+level:"B2",
+words:[
+["career","sự nghiệp"],
+["profession","nghề nghiệp"],
+["employee","nhân viên"],
+["employer","người sử dụng lao động"],
+["promotion","thăng chức"],
+["salary","lương"],
+["qualification","bằng cấp"],
+["experience","kinh nghiệm"],
+["workload","khối lượng công việc"],
+["interview","phỏng vấn"]
+]
+},
+
+{
+name:"Money & Finance",
+level:"B2",
+words:[
+["income","thu nhập"],
+["expense","chi phí"],
+["budget","ngân sách"],
+["investment","đầu tư"],
+["profit","lợi nhuận"],
+["debt","nợ"],
+["savings","tiền tiết kiệm"],
+["economy","nền kinh tế"],
+["financial","thuộc tài chính"],
+["afford","có khả năng chi trả"]
+]
+},
+
+{
+name:"Business",
+level:"B2-C1",
+words:[
+["enterprise","doanh nghiệp"],
+["corporation","tập đoàn"],
+["revenue","doanh thu"],
+["consumer","người tiêu dùng"],
+["competition","cạnh tranh"],
+["strategy","chiến lược"],
+["market","thị trường"],
+["investment","đầu tư"],
+["entrepreneur","doanh nhân"],
+["management","quản lý"]
+]
+},
+
+{
+name:"Communication",
+level:"B2",
+words:[
+["conversation","cuộc trò chuyện"],
+["expression","cách diễn đạt"],
+["gesture","cử chỉ"],
+["misunderstanding","hiểu lầm"],
+["persuade","thuyết phục"],
+["communicate","giao tiếp"],
+["argument","lập luận"],
+["clarify","làm rõ"],
+["interpret","diễn giải"],
+["statement","lời phát biểu"]
+]
+},
+
+{
+name:"Media",
+level:"B2",
+words:[
+["journalist","nhà báo"],
+["headline","tiêu đề"],
+["broadcast","phát sóng"],
+["report","bản tin"],
+["source","nguồn"],
+["audience","khán giả"],
+["publication","ấn phẩm"],
+["coverage","sự đưa tin"],
+["bias","thiên kiến"],
+["journalism","ngành báo chí"]
+]
+},
+
+{
+name:"Social Media",
+level:"B1-B2",
+words:[
+["platform","nền tảng"],
+["follower","người theo dõi"],
+["content","nội dung"],
+["influencer","người có ảnh hưởng"],
+["viral","lan truyền"],
+["comment","bình luận"],
+["privacy","quyền riêng tư"],
+["upload","tải lên"],
+["download","tải xuống"],
+["interaction","tương tác"]
+]
+},
+
+{
+name:"Entertainment",
+level:"B1",
+words:[
+["performance","màn trình diễn"],
+["audience","khán giả"],
+["actor","diễn viên"],
+["episode","tập phim"],
+["plot","cốt truyện"],
+["character","nhân vật"],
+["comedy","hài kịch"],
+["documentary","phim tài liệu"],
+["production","sản xuất"],
+["amusing","thú vị"]
+]
+},
+
+{
+name:"Music",
+level:"B1",
+words:[
+["melody","giai điệu"],
+["rhythm","nhịp điệu"],
+["instrument","nhạc cụ"],
+["performance","buổi biểu diễn"],
+["lyrics","lời bài hát"],
+["composer","nhà soạn nhạc"],
+["musician","nhạc sĩ"],
+["genre","thể loại"],
+["harmony","hòa âm"],
+["concert","buổi hòa nhạc"]
+]
+},
+
+{
+name:"Books & Literature",
+level:"B2",
+words:[
+["novel","tiểu thuyết"],
+["author","tác giả"],
+["character","nhân vật"],
+["narrative","câu chuyện / trần thuật"],
+["fiction","tiểu thuyết hư cấu"],
+["poetry","thơ ca"],
+["theme","chủ đề"],
+["symbolism","biểu tượng"],
+["plot","cốt truyện"],
+["literary","thuộc văn học"]
+]
+},
+
+{
+name:"Sports",
+level:"B1",
+words:[
+["athlete","vận động viên"],
+["competition","cuộc thi"],
+["championship","giải vô địch"],
+["training","luyện tập"],
+["performance","thành tích"],
+["teamwork","làm việc nhóm"],
+["victory","chiến thắng"],
+["defeat","thất bại"],
+["coach","huấn luyện viên"],
+["tournament","giải đấu"]
+]
+},
+
+{
+name:"Crime & Law",
+level:"B2-C1",
+words:[
+["crime","tội phạm"],
+["criminal","tội phạm"],
+["victim","nạn nhân"],
+["evidence","bằng chứng"],
+["justice","công lý"],
+["punishment","hình phạt"],
+["illegal","bất hợp pháp"],
+["investigation","điều tra"],
+["court","tòa án"],
+["lawyer","luật sư"]
+]
+},
+
+{
+name:"Politics & Government",
+level:"C1",
+words:[
+["government","chính phủ"],
+["election","bầu cử"],
+["policy","chính sách"],
+["democracy","dân chủ"],
+["citizen","công dân"],
+["authority","chính quyền"],
+["parliament","quốc hội"],
+["minister","bộ trưởng"],
+["legislation","pháp luật"],
+["administration","chính quyền / sự quản lý"]
+]
+},
+
+{
+name:"Globalization",
+level:"C1",
+words:[
+["globalization","toàn cầu hóa"],
+["international","quốc tế"],
+["trade","thương mại"],
+["migration","di cư"],
+["multicultural","đa văn hóa"],
+["economy","nền kinh tế"],
+["integration","hội nhập"],
+["cooperation","hợp tác"],
+["global market","thị trường toàn cầu"],
+["interconnected","liên kết với nhau"]
+]
+},
+
+{
+name:"Climate Change",
+level:"B2-C1",
+words:[
+["climate","khí hậu"],
+["greenhouse gas","khí nhà kính"],
+["carbon footprint","dấu chân carbon"],
+["global warming","nóng lên toàn cầu"],
+["drought","hạn hán"],
+["flood","lũ lụt"],
+["renewable energy","năng lượng tái tạo"],
+["emission","khí thải"],
+["adaptation","sự thích nghi"],
+["mitigation","sự giảm nhẹ"]
+]
+},
+
+{
+name:"Natural Disasters",
+level:"B1-B2",
+words:[
+["earthquake","động đất"],
+["volcano","núi lửa"],
+["tsunami","sóng thần"],
+["hurricane","bão"],
+["tornado","lốc xoáy"],
+["flood","lũ lụt"],
+["drought","hạn hán"],
+["landslide","sạt lở đất"],
+["evacuation","sơ tán"],
+["destruction","sự phá hủy"]
+]
+},
+
+{
+name:"Cities & Urban Life",
+level:"B2",
+words:[
+["urban","thuộc đô thị"],
+["population","dân số"],
+["infrastructure","cơ sở hạ tầng"],
+["traffic congestion","tắc nghẽn giao thông"],
+["suburb","ngoại ô"],
+["residential","thuộc khu dân cư"],
+["skyscraper","nhà chọc trời"],
+["public transport","giao thông công cộng"],
+["pollution","ô nhiễm"],
+["urbanization","đô thị hóa"]
+]
+},
+
+{
+name:"Future & Innovation",
+level:"B2-C1",
+words:[
+["innovation","đổi mới"],
+["invention","phát minh"],
+["predict","dự đoán"],
+["potential","tiềm năng"],
+["emerging","mới nổi"],
+["advanced","tiên tiến"],
+["revolutionary","mang tính cách mạng"],
+["develop","phát triển"],
+["breakthrough","bước đột phá"],
+["transform","thay đổi sâu sắc"]
+]
+},
+
+{
+name:"Psychology & Emotions",
+level:"B2-C1",
+words:[
+["emotion","cảm xúc"],
+["anxiety","lo âu"],
+["confidence","sự tự tin"],
+["motivation","động lực"],
+["personality","tính cách"],
+["behavior","hành vi"],
+["perception","nhận thức"],
+["stress","căng thẳng"],
+["resilience","khả năng phục hồi"],
+["self-esteem","lòng tự trọng"]
+]
+},
+
+{
+name:"Space & The Universe",
+level:"B2-C1",
+words:[
+["planet","hành tinh"],
+["galaxy","thiên hà"],
+["universe","vũ trụ"],
+["astronaut","phi hành gia"],
+["orbit","quỹ đạo"],
+["gravity","trọng lực"],
+["satellite","vệ tinh"],
+["asteroid","tiểu hành tinh"],
+["telescope","kính thiên văn"],
+["exploration","sự khám phá"]
+]
+}
+
+];
+
+const grammar = [
+
+["Present & Past Tenses",
+"Ôn hiện tại đơn, hiện tại tiếp diễn, hiện tại hoàn thành, quá khứ đơn, quá khứ tiếp diễn và quá khứ hoàn thành.",
+"She has lived here for five years."],
+
+["Future Forms",
+"Will, be going to, present continuous và future continuous.",
+"This time tomorrow, I will be studying."],
+
+["Passive Voice",
+"Cấu trúc bị động: be + V3/ed. Có thể dùng ở nhiều thì khác nhau.",
+"The book was written by a famous author."],
+
+["Conditionals",
+"Zero, first, second, third và mixed conditionals.",
+"If I had studied harder, I would have passed."],
+
+["Reported Speech",
+"Chuyển câu trực tiếp sang gián tiếp, chú ý thì, đại từ và trạng từ thời gian.",
+"She said that she was tired."],
+
+["Relative Clauses",
+"Who, which, that, whose, where, when và mệnh đề quan hệ rút gọn.",
+"The girl who won the prize is my friend."],
+
+["Modal Verbs",
+"Can, could, may, might, must, should, ought to, have to...",
+"You should revise before the exam."],
+
+["Gerunds & Infinitives",
+"Phân biệt V-ing và to + V sau các động từ khác nhau.",
+"I enjoy reading books."],
+
+["Articles",
+"Cách dùng a, an, the và zero article.",
+"She is a student."],
+
+["Comparatives",
+"So sánh hơn, nhất, bằng và cấu trúc nâng cao.",
+"This test is more difficult than I expected."],
+
+["Subject–Verb Agreement",
+"Động từ phải hòa hợp với chủ ngữ.",
+"Everyone is ready."],
+
+["Prepositions",
+"Giới từ chỉ thời gian, nơi chốn, phương hướng và các cụm cố định.",
+"She is interested in science."],
+
+["Linking Words",
+"Although, however, therefore, moreover, whereas, despite...",
+"Although it was raining, we went outside."],
+
+["Word Formation",
+"Danh từ, động từ, tính từ, trạng từ và tiền tố/hậu tố.",
+"success → successful → successfully"],
+
+["Inversion",
+"Đảo ngữ sau các trạng từ phủ định hoặc hạn định.",
+"Never have I seen such a beautiful place."],
+
+["Cleft Sentences",
+"It is/was...that/who và What...is... để nhấn mạnh.",
+"It was Tom who broke the window."],
+
+["Mixed Conditionals",
+"Kết hợp điều kiện quá khứ với kết quả hiện tại hoặc ngược lại.",
+"If I had studied medicine, I would be a doctor now."],
+
+["Advanced Clauses",
+"Mệnh đề chỉ nguyên nhân, nhượng bộ, mục đích, kết quả và điều kiện.",
+"Although he was tired, he continued working."]
+
+];
+
+let learned = JSON.parse(localStorage.getItem("learnedWords") || "[]");
+let totalScore = Number(localStorage.getItem("score") || 0);
+
+function renderTopics(list = topics) {
+
+    const box = document.getElementById("topics");
+
+    box.innerHTML = "";
+
+    list.forEach((topic, index) => {
+
+        const learnedInTopic =
+            topic.words.filter(w => learned.includes(w[0])).length;
+
+        const percent =
+            Math.round(learnedInTopic / topic.words.length * 100);
+
+        box.innerHTML += `
+        <div class="card" onclick="openTopic(${topics.indexOf(topic)})">
+
+            <span class="level">${topic.level}</span>
+
+            <h3>${index + 1}. ${topic.name}</h3>
+
+            <p>${topic.words.length} từ vựng</p>
+
+            <div class="progress">
+                <div style="width:${percent}%"></div>
+            </div>
+
+            <small>${percent}% đã học</small>
+
+        </div>
+        `;
+    });
+}
+
+function showTopics() {
+
+    document.getElementById("topics").classList.remove("hidden");
+    document.getElementById("grammar").classList.add("hidden");
+
+    document.querySelectorAll(".tabs button")[0]
+        .classList.add("active");
+
+    document.querySelectorAll(".tabs button")[1]
+        .classList.remove("active");
+}
+
+function showGrammar() {
+
+    document.getElementById("topics").classList.add("hidden");
+    document.getElementById("grammar").classList.remove("hidden");
+
+    document.querySelectorAll(".tabs button")[1]
+        .classList.add("active");
+
+    document.querySelectorAll(".tabs button")[0]
+        .classList.remove("active");
+
+    const box = document.getElementById("grammar");
+
+    box.innerHTML = grammar.map((g, i) => `
+        <div class="grammar-box">
+
+            <h3>${i + 1}. ${g[0]}</h3>
+
+            <p>${g[1]}</p>
+
+            <div class="example">
+                <b>Example:</b> ${g[2]}
+            </div>
+
+        </div>
+    `).join("");
+}
+
+function openTopic(index) {
+
+    const topic = topics[index];
+
+    document.getElementById("home").classList.add("hidden");
+
+    const lesson = document.getElementById("lesson");
+
+    lesson.classList.remove("hidden");
+
+    lesson.innerHTML = `
+
+        <button class="back" onclick="closeLesson()">
+            ← Quay lại
+        </button>
+
+        <div class="lesson">
+
+            <span class="level">${topic.level}</span>
+
+            <h2>${topic.name}</h2>
+
+            <p>Học 10 từ vựng chủ đề này</p>
+
+            ${topic.words.map((w,i)=>`
+
+                <div class="word">
+
+                    <b>${i+1}. ${w[0]}</b>
+
+                    <p>${w[1]}</p>
+
+                    <button class="primary"
+                        onclick="learnWord('${w[0]}')">
+                        ✓ Đã học
+                    </button>
+
+                </div>
+
+            `).join("")}
+
+            <div class="quiz">
+
+                <h2>📝 Mini Quiz</h2>
+
+                ${createQuiz(topic)}
+
+            </div>
+
+        </div>
+    `;
+}
+
+function createQuiz(topic) {
+
+    const questions = [
+        {
+            q:`What does "${topic.words[0][0]}" mean?`,
+            options:[
+                topic.words[0][1],
+                "một loại phương tiện",
+                "một hoạt động",
+                "một địa điểm"
+            ],
+            answer:0
+        },
+
+        {
+            q:`Which word means "${topic.words[1][1]}"?`,
+            options:[
+                topic.words[2][0],
+                topic.words[1][0],
+                topic.words[3][0],
+                topic.words[4][0]
+            ],
+            answer:1
+        },
+
+        {
+            q:`Which word belongs to the topic "${topic.name}"?`,
+            options:[
+                topic.words[5][0],
+                "banana",
+                "window",
+                "pencil"
+            ],
+            answer:0
+        }
+    ];
+
+    return questions.map((q,i)=>`
+
+        <div class="question">
+
+            <b>${i+1}. ${q.q}</b>
+
+            ${q.options.map((op,j)=>`
+
+                <button
+                    class="option"
+                    onclick="answer(this,${j},${q.answer})">
+
+                    ${op}
+
+                </button>
+
+            `).join("")}
+
+        </div>
+
+    `).join("");
+}
+
+function answer(button, selected, correct) {
+
+    const buttons = button.parentElement
+        .querySelectorAll(".option");
+
+    buttons.forEach(b => b.disabled = true);
+
+    if(selected === correct) {
+
+        button.classList.add("correct");
+
+        totalScore += 10;
+
+    } else {
+
+        button.classList.add("wrong");
+
+        buttons[correct].classList.add("correct");
+
+    }
+
+    localStorage.setItem("score", totalScore);
+
+    updateStats();
+}
+
+function learnWord(word) {
+
+    if(!learned.includes(word)) {
+
+        learned.push(word);
+
+        localStorage.setItem(
+            "learnedWords",
+            JSON.stringify(learned)
+        );
+
+        updateStats();
+
+        alert("🎉 Đã thêm vào danh sách từ đã học!");
+
+    } else {
+
+        alert("Bạn đã học từ này rồi!");
+
+    }
+}
+
+function closeLesson() {
+
+    document.getElementById("lesson").classList.add("hidden");
+
+    document.getElementById("home").classList.remove("hidden");
+
+    renderTopics();
+
+}
+
+function updateStats() {
+
+    document.getElementById("wordCount").textContent =
+        learned.length;
+
+    document.getElementById("score").textContent =
+        totalScore;
+
+}
+
+document.getElementById("search").addEventListener("input", e => {
+
+    const value = e.target.value.toLowerCase();
+
+    const filtered = topics.filter(t =>
+        t.name.toLowerCase().includes(value)
+    );
+
+    renderTopics(filtered);
+
+});
+
+renderTopics();
+
+updateStats();
+
+</script>
+
+</body>
+</html>
